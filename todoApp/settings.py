@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'todoApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'Tasks'),
+        'NAME': os.path.join(BASE_DIR, 'tasks'),
     }
 }
 
@@ -120,3 +120,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/todo/'

@@ -13,5 +13,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\zsarkis\PycharmProjects\todoApp\db.sqlite3</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Tasks" uuid="576365bf-315e-4746-b49c-95bb7a5a2af4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/Tasks</jdbc-url>
+    </data-source>
   </component>
 </project>
