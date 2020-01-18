@@ -21,7 +21,7 @@ from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('todo/', login_required(todoView)),
+    path('todo/', todoView),
     path('addTodo/', login_required(addTodo)),
     path('deleteTodo/<int:todo_id>/', login_required(deleteTodo)),
     path('clear/', login_required(clear)),

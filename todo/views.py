@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
-@login_required
 def todoView(request):
     allTodoItems = TodoItem.objects.all()
     return render(request, 'todo.html',
