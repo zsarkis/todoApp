@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.urls import path, include
+from django.views.generic import TemplateView
+
 from todo.views import todoView, addTodo, deleteTodo, clear
 from django.contrib.auth.views import LoginView
 
@@ -26,5 +28,6 @@ urlpatterns = [
     path('deleteTodo/<int:todo_id>/', login_required(deleteTodo)),
     path('clear/', login_required(clear)),
     path('login/', LoginView.as_view(template_name='login.html'), name="login"),
+    path('register/', TemplateView.as_view(template_name="register.html")),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

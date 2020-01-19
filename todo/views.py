@@ -8,14 +8,14 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def todoView(request):
-    allTodoItems = TodoItem.objects.all()
+    allTodoItems = TodoItem.objects.filter(user_id=request.user.id)
     return render(request, 'todo.html',
                   {'all_items': allTodoItems})
 
 @login_required
 def addTodo(request):
     content = request.POST['content']
-    new_item = TodoItem(content= content)
+    new_item = TodoItem(content= content, user_id=request.user.id)
     new_item.save()
     return HttpResponseRedirect('/todo/')
 
@@ -27,7 +27,7 @@ def deleteTodo(request, todo_id):
 
 @login_required
 def clear(request):
-    for item in TodoItem.objects.all():
+    for item in TodoItem.objects.filter(user_id=request.user.id):
         item.delete()
     return HttpResponseRedirect('/todo/')
 
