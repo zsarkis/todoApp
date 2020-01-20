@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .user import register
+from .user import RegisterForm
 
 from .models import TodoItem
 from django.contrib.auth.models import User
@@ -33,5 +33,6 @@ def clear(request):
     return HttpResponseRedirect('/todo/')
 
 def callRegister(request):
-    return register(request)
+    return RegisterForm.register(request)
+
 
