@@ -28,7 +28,7 @@ urlpatterns = [
     path('deleteTodo/<int:todo_id>/', login_required(deleteTodo)),
     path('clear/', login_required(clear)),
     path('login/', LoginView.as_view(template_name='login.html'), name="login"),
-    path('register/', TemplateView.as_view(template_name="register.html")),
+    path('register/', callRegister),
     path('user/', callRegister),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
