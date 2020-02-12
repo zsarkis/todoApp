@@ -8,7 +8,7 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        <h1>This is the todo page.</h1>
+        <h1>Here's your to do list.</h1>
         <ul>
             {% for todo_item in all_items %}
                 <li>{{ todo_item.content }}

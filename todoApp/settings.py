@@ -20,13 +20,32 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4e6m79hojso6_zgwgyb#rh&6#mj2u1$nvc^mq5u0x@t^ie_o3-'
+# with open('C:/Users/zsarkis/Documents/todoKey.txt') as f:
+SECRET_KEY = 'bigOlLyinSecretRightHere'#f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
+SECURE_BROWSER_XSS_FILTER = True
+
+SESSION_COOKIE_SECURE = False
+
+SECURE_SSL_REDIRECT = False
+
+CSRF_COOKIE_SECURE = False
+
+X_FRAME_OPTIONS = 'DENY'
+
+SECURE_HSTS_SECONDS = 3600
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_HSTS_PRELOAD = True
+
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -82,7 +101,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -107,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'MST'
 
 USE_I18N = True
 
